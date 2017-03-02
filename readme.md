@@ -169,14 +169,17 @@ const Plugins = ( api, obj ) =>
 ## Differences when implementing with depject
 
 Every plugin function is described as a `depject` module instead of being a raw
-function expecting `api` as its first argument. Functions with dependencies
-still take an api argument, but instead of automatically brute forcing every
-function in the `api` to take the `api` instance as its first argument via
-partial application with the `Plugins` function described above, you curry it in
-with the `create` property on the module (making it slightly more manual in a
-sense), and the api `argument` provided by `depject` has been resolved for you
-according to the `needs` property of the module rather than just being a bag of
-every function in the api.
+function expecting `api` as its first argument.
+
+`depject` module functions with dependencies still take an `api` argument, but
+instead of automatically brute forcing every consumer facing function in the
+`api` to take the `api` instance as its first argument via partial application
+with the `Plugins` function described above, you curry it in with the `create`
+property on the module, making it slightly more manual in a sense.
+
+The `api` argument provided by `depject` has been resolved for you according to
+the `needs` property of the module rather than just being a bag of every
+function in the api.
 
 ### Pros
 
@@ -187,8 +190,6 @@ every function in the api.
   the general `api` bag of functions - and even if you don't know how `depject`
   works, the module definitions are reasonably intuitive when looking at good
   examples.
-- Only pass the `api` to functions that need it, so in some cases some functions
-  are slightly more concise
 - Provides a standard implementation for dependencies, the classical approach I
   normally use is more of a pattern than an implementation
 - Makes more sense to anyone already familiar with `depject`
