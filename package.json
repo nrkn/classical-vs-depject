@@ -1,0 +1,24 @@
+{
+  "name": "xxx",
+  "version": "0.1.0",
+  "description": "xxx",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify browser.js -o ./browser/main.js --debug"
+  },
+  "keywords": [],
+  "author": "Nik Coughlin <nrkn.com@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mojule/xxx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mojule/xxx/issues"
+  },
+  "homepage": "https://github.com/mojule/xxx#readme",
+  "devDependencies": {
+    "browserify": "^14.1.0"
+  },
+  "dependencies": {}
+}

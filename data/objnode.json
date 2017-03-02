@@ -1,0 +1,49 @@
+{
+  "value": {
+    "nodeName": "section"
+  },
+  "children": [
+    {
+      "value": {
+        "nodeName": "h1"
+      },
+      "children": [
+        {
+          "value": {
+            "nodeName": "#text",
+            "nodeValue": "Test"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "value": {
+        "nodeName": "p"
+      },
+      "children": [
+        {
+          "value": {
+            "nodeName": "#text",
+            "nodeValue": "Hello "
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "nodeName": "strong"
+          },
+          "children": [
+            {
+              "value": {
+                "nodeName": "#text",
+                "nodeValue": "World!"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
