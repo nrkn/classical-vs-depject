@@ -60,7 +60,7 @@ module.exports = { isElement, isText, text, children, nodeName }
 
 You write each function for the adapter as a "plugin" - that is, a function
 whose first argument is the API - later, when you have all your API functions,
-you remove this argument by wrapping it via partical application so that the
+you remove this argument by wrapping it via partial application so that the
 consumer of the API doesn't have to manually pass in the API for every function:
 
 ```javascript
