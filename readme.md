@@ -173,8 +173,7 @@ function expecting `api` as its first argument.
 
 `depject` module functions with dependencies still take an `api` argument, but
 instead of automatically brute forcing every consumer facing function in the
-`api` to take the `api` instance as its first argument via partial application
-with the `Plugins` function described above, you curry it in with the `create`
+`api` with the `Plugins` function described above, you curry it in with the `create`
 property on the module, making it slightly more manual in a sense.
 
 The `api` argument provided by `depject` has been resolved for you according to
