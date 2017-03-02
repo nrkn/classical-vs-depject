@@ -214,3 +214,7 @@ const api = Object.keys( sockets ).reduce( ( api, key ) => {
   return api
 }, {})
   ```
+  
+## Conclusion
+  
+I really like `depject` and will probably use it in future over my former approach, I like the explicitness it creates. It's a shame that I have so much existing code using the former approach though :/
