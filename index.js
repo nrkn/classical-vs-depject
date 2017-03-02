@@ -1,25 +1,22 @@
 'use strict'
 
-const Dom = require( './dom' )
-const Plugins = require( './plugins' )
-const jadapter = require( './adapters/jsonml' )
-const oadapter = require( './adapters/objnode' )
-const helloParent = require( './plugins/helloParent' )
 const jsonml = require( './data/jsonml.json' )
 const objnode = require( './data/objnode.json' )
 
-const J = Dom( jadapter )
-const O = Dom( oadapter )
+const japi = require( './src/api/jsonml' )
+const oapi = require( './src/api/objnode' )
 
-Plugins( J, { helloParent } )
-Plugins( O, { helloParent } )
+const djapi = require( './depject/api/jsonml' )
+const doapi = require( './depject/api/objnode' )
 
-const log = ( D, data, name ) => {
+const log = ( api, data, name ) => {
   console.log( `${ name }:` )
-  const helloParent = D.helloParent( data )
-  console.log( D.stringify( helloParent ) )
+  const helloParent = api.helloParent( data )
+  console.log( api.stringify( helloParent ) )
   console.log()
 }
 
-log( J, jsonml, 'jsonml' )
-log( O, objnode, 'objnode' )
+log( japi, jsonml, 'jsonml' )
+log( oapi, objnode, 'objnode' )
+log( djapi, jsonml, 'depject jsonml' )
+log( doapi, objnode, 'depject objnode' )

@@ -1,17 +1,19 @@
 'use strict'
 
-const Dom = require( './dom' )
-const Plugins = require( './plugins' )
-const adapter = require( './adapters/dom' )
-const helloParent = require( './plugins/helloParent' )
-
-const D = Dom( adapter )
-
-Plugins( D, { helloParent } )
+const dom = require( './src/api/dom' )
+const ddom = require( './depject/api/dom' )
 
 const section = document.querySelector( 'section' )
 const pre = document.querySelector( 'pre' )
-const hp = D.helloParent( section )
+
+const log = ( api, data, name ) => {
+  const helloParent = api.helloParent( data )
+
+  pre.textContent += `${ name }:\n`
+  pre.textContent += `${ api.stringify( helloParent ) }\n\n`
+}
+
+log( dom, section, 'dom' )
+log( ddom, section, 'depject dom' )
 
 section.remove()
-pre.textContent = D.stringify( hp )

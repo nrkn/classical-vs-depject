@@ -20,5 +20,7 @@
   "devDependencies": {
     "browserify": "^14.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "depject": "^3.2.0"
+  }
 }

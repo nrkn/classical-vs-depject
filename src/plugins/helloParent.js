@@ -1,7 +1,7 @@
 'use strict'
 
-const helloParent = ( D, node ) => {
-  const { isText, text, find, parent } = D
+const helloParent = ( api, node ) => {
+  const { isText, text, find, parent } = api
 
   const isHelloText = n =>
     isText( n ) && text( n ).includes( 'Hello' )
